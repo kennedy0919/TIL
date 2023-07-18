@@ -37,8 +37,18 @@ print(bin(12))
 
 # print("h" in world)
 
-dic = {"name": "kennedy", "height": 175}
+# dic = {"name": "kennedy", "height": 175}
 
-print(list(dic))
+# print(list(dic))
 
 # key 값만 들어오고 value 값은 버려진다.
+
+text1 = "          가야할 때 언제인가를          "
+text2 = "          분명히 알고 가는 이의          "
+text3 = "          뒷모습은 얼마나 아름다운가.          "
+print("다음은 이형기 시인의\"낙화\"의 한 구절이다\n -1연")
+print(text1.center(10))
+print(text2.center(10))
+print(text3.center(10))
+print("\n")
+print("나는 이 시를 보며 '나는 내가 가야할 때가 언제일까?' 를 생각해 보았다.") 
