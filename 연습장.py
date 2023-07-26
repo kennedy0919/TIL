@@ -1,3 +1,2 @@
-
-
+print("banana".find("a"))
          
