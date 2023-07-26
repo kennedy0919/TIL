@@ -28,22 +28,14 @@
 # N 개의 점수들 중, 중간값에 해당하는 점수를 정답으로 출력한다.
 
 N = int(input())
-
-print(N)
+ 
 list1 = list(map(int, input().split()))
-
+ 
 list1.sort()
-a = 0 
-b = 0
-if len(list1)%2 !=0 :
-    a = len(list1)//2 + 1
-    b = list1(a)
-
-else :
-    breakpoint
-    
-
-print(b)
+ 
+mid = list1[N//2]
+ 
+print(mid)
     
 
 

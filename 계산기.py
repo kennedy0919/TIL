@@ -30,7 +30,6 @@ while True:
     cal = input("연산자를 입력하세요:")
     n2 = int(input("두번째 숫자를 입력하세요:"))
 
-
     if n1 == n2 and n1 == 0:
         break  # 반복문을 종료하는 키워드
     elif cal == "+":
@@ -40,16 +39,13 @@ while True:
         print("결과:", n1 - n2)
 
     elif cal == "*":
-        print("결과:", n1*n2)
+        print("결과:", n1 * n2)
 
     elif cal == "/":
-        if n2 == 0 :
+        if n2 == 0:
             print("0으로 나눌 수 없습니다.")
-        else :
-            print("결과:", n1/n2)
+        else:
+            print("결과:", n1 / n2)
 
-        
     else:
         print("연산자를 잘못 입력했습니다.")
-
-    

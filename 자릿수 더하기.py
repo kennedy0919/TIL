@@ -16,7 +16,7 @@ N = int(input())
 def solution(N):
     answer = 0
 
-    while(N>0):
+    while N > 0:
         answer+=(N%10)
         N=N//10
 
