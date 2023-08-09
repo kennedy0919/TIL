@@ -1,41 +1,24 @@
 T = int(input())
 
 for tc in range(1, 1 + T):
-    A, B = input().split()
-    # A, B = list(map(str, input().split()))
-    counts = 0
-    ans_counts = 0
-    for i in range(0, len(A) - len(B) + 1):
-        for j in range(0, len(B)):
-            B[j] == A[i+j]
-            break  
+    text = input()
+    top = -1
+    size = 1000
+    stack = [0] * size
+    top = top + 1
+    stack[top] = text[0]
+
+    for i in range(1, len(text)):
+
+        if top != -1 and stack[top] == text[i]:
+            top = top - 1
+
         else:
-            counts = counts + 1
+            top = top + 1
+            stack[top] = text[i]
 
-    ans = len(A) - (len(B) * counts) + counts
-    
-
-    if counts == len(B):
-        counts = 0
-        ans_counts = ans_counts + 1
+    print(f"#{tc} {top+1}")
 
 
-    # for i in range(0, len(A) - len(B) + 1):
-    #     for j in range(0, len(B)):
-    #         B[j] == A[i+j]
-    #         break  
-    #     else:
-    #         counts = counts + 1
-
-    # ans = len(A) - (len(B) * counts) + counts
-
-
-    # ans = len(A) - (len(B) - 1) * ans_counts
-    ans = len(A) - (len(B) * ans_counts) + ans_counts
-
-    print(f"#{tc} {ans}")
+            
                 
-
-
-
-
