@@ -17,6 +17,8 @@ for tc in range(1, T + 1):
         for c in range(0, N):
             if arr[r][c] == 0:
                 counts = counts + 1
+            if arr[r][c] == 1:
+                counts = 0
             if counts == 5:
                 ans = "YES"
                 
@@ -25,22 +27,34 @@ for tc in range(1, T + 1):
         for r in range(0, N):
             if arr[r][c] == 0:
                 counts = counts + 1
+            if arr[r][c] == 1:
+                counts = 0
             if counts == 5:
                 ans = "YES"
-                
+    
     for r in range(0, N):
         for c in range(0, N):
-            for i in range(0, N):
-                if r+i < N and c+i < N and arr[r+i][c+i] == 0:
+            counts = 0
+            for i in range(0, 5):
+                if r+i < N and c+i < N:
+                    if arr[r+i][c+i] == 0:
                         counts = counts + 1
+                    if arr[r+i][c+i] == 1:
+                        break
+            
                 if counts == 5:
                     ans = "YES"
     
     for r in range(0, N):
         for c in range(0, N):
-            for i in range(0, N):
-                if r+i < N and 0 < c-i < N and arr[r+i][c-i] == 0:
+            counts = 0
+            for i in range(0, 5):
+                if r+i < N and 0 <= c-i < N:
+                    if arr[r+i][c-i] == 0:
                         counts = counts + 1
+                    if arr[r+i][c-i] == 1:
+                        break
+            
                 if counts == 5:
                     ans = "YES"
 

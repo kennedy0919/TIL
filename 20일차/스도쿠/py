@@ -1,0 +1,88 @@
+T = int(input())
+
+for tc in range(1, T + 1):
+    arr = [list(map(int, input().split())) for _ in range(0, 9)]
+    counts = 0
+    num = 0
+
+    for r in range(0, 9):
+        num = 0
+        for c in range(0, 9):
+            num = num + arr[r][c]
+            if num == 45:
+                for i in range(0, 8):
+                    if arr[r][i] == arr[r][i+1]:
+                        break
+                
+        else:
+            counts = counts + 1
+    
+    for c in range(0, 9):
+        num = 0
+        for r in range(0, 9):
+            num = num + arr[r][c]
+            if num == 45:
+                for i in range(0, 8):
+                    if arr[i][c] == arr[i+1][c]:
+                        break
+                
+        else:
+            counts = counts + 1
+
+    for i in range(0, 9, 3):
+        num = 0
+        for r in range(0, 3):
+            for c in range(0 + i, 3 + i):
+                num = num + arr[r][c]
+        print("#", num)
+        if num == 45:
+            for k in range(0, 8):
+                if arr[r][k] == arr[r][k+1]:
+                    break
+            else:
+                counts = counts + 1
+
+    for i in range(0, 9, 3):
+        num = 0
+        for c in range(0, 3):
+            for r in range(0 + i, 3 + i):
+                num = num + arr[r][c]
+        print("#", num)
+        if num == 45:
+            for k in range(0, 8):
+                if arr[k][c] == arr[k+1][c]:
+                    break
+            else:
+                counts = counts + 1
+    # for i in range(0, 9, 3):
+    #     for r in range(0, 3):
+    #         for c in range(0, 3):
+    #             num = num + arr[r][c+i]
+    
+    #     if num == 45:
+    #         for i in range(0, 8):
+    #             if arr[i][c] == arr[r+i][c]:
+    #                 break
+                
+    #     else:
+    #         counts = counts + 1
+
+    # for i in range(0, 9, 3):
+    #     for c in range(0, 3):
+    #         for r in range(0, 3):
+    #             num = num + arr[r+i][c]
+    
+    #     if num == 45:
+    #         for i in range(0, 8):
+    #             if arr[i][c] == arr[r+i][c]:
+    #                 break
+                
+    #     else:
+    #         counts = counts + 1
+    
+    if counts == 27:
+        ans = 1
+    else:
+        ans = 0
+    print(counts)
+    print(f"#{tc} {ans}")
