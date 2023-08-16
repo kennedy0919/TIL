@@ -1,13 +1,18 @@
 def get_result(postfix):
     stack = []
-    
-    for c in postfix:
 
+    for c in postfix:
         if c not in ["+", "-", "/", "*", "."]:
             stack.append(int(c))
-        
-            print(stack)
+
         else:
+            if c == ".":
+                if len(stack) >= 2:
+                    return "error"
+                else:
+                    return stack.pop()
+            if len(stack) <= 1:
+                return "error"
             right = int(stack.pop())
             left = int(stack.pop())
 
@@ -22,15 +27,14 @@ def get_result(postfix):
 
             if c == "*":
                 result = left * right
-
+            
             stack.append(result)
-    return stack.pop()
+    return
 
 T = int(input())
 
 for tc in range(1, T + 1):
     string = input().split()
-    print("#", string)
     print(f"#{tc}", get_result(string))
             
                     
