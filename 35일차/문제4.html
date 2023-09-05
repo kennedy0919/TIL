@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .black_phone {
+            width: 300px; /* 이미지 컨테이너의 너비 */
+            height: 200px; /* 이미지 컨테이너의 높이 */
+            background-image: url(images/black_pawn.png); /* 이미지 파일 경로를 지정합니다. */
+            background-size: cover; /* 이미지를 컨테이너에 맞게 조절합니다. */
+            background-repeat: no-repeat; /* 이미지 반복을 끕니다. */
+        }
+        .white_king {
+            width: 300px; /* 이미지 컨테이너의 너비 */
+            height: 200px; /* 이미지 컨테이너의 높이 */
+            background-image: url(images/white_king.png); /* 이미지 파일 경로를 지정합니다. */
+            background-size: cover; /* 이미지를 컨테이너에 맞게 조절합니다. */
+            background-repeat: no-repeat; /* 이미지 반복을 끕니다. */
+            z-index: 9999;
+        }
+        .white_queen {
+            width: 300px; /* 이미지 컨테이너의 너비 */
+            height: 200px; /* 이미지 컨테이너의 높이 */
+            background-image: url(images/white_queen.png); /* 이미지 파일 경로를 지정합니다. */
+            background-size: cover; /* 이미지를 컨테이너에 맞게 조절합니다. */
+            background-repeat: no-repeat; /* 이미지 반복을 끕니다. */
+        }
+        .white_rook {
+            width: 300px; /* 이미지 컨테이너의 너비 */
+            height: 200px; /* 이미지 컨테이너의 높이 */
+            background-image: url(images/white_rook.png); /* 이미지 파일 경로를 지정합니다. */
+            background-size: cover; /* 이미지를 컨테이너에 맞게 조절합니다. */
+            background-repeat: no-repeat; /* 이미지 반복을 끕니다. */
+        }
+        .chess {
+            width: 800px;
+            border: 1px solid black;
+        }
+        .col {
+            width: 100px;
+            height: 100px;
+        }
+        .row {
+            display: flex;
+        }
+
+        .row:nth-child(2n+1) .col:nth-child(2n),
+        .row:nth-child(2n)   .col:nth-child(2n+1) {
+            background-color: black;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="chess">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col white_king"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col white_rook"></div>
+            <div class="col white_queen"></div>
+            <div class="col"></div>
+        </div>
+    </div>
+</body>
+</html>

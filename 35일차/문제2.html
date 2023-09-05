@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h2 {
+        float: right;
+        align-content: space-evenly;
+        margin-right: 50px;
+    }
+    .floatleft {
+        float: left;
+    }
+    .floatright {
+        float: right;
+    }
+    .box {
+        width: 800px;
+        height: 300px;
+        padding-left: 25px;
+        padding-bottom: 25px;
+        margin-left: 25px;
+        margin-top: 50px;
+        border: 3px solid black;
+    }
+    .clear {
+            clear: both;
+    }
+    .marginright {
+        margin-right: 50px;
+    }
+    .margintop {
+        margin-top: 0px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div>
+      <img src="images/profile.jpg"
+           alt="Profile Image"
+           style="width: 150px; height: 150px;"
+       >
+      <h2>Company Name</h2>
+    </div>
+    <div>
+      <div class="floatleft">
+        <h3>한글 이름</h3>
+        <h4>English Name</h4>
+      </div>
+      <div class="floatright marginright">
+        <p>Phone Number</p>
+        <p>Email</p>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <hr>
+    <div class="floatright marginright margin-top">
+      <p>description</p>
+    </div>
+  </div>
+</body>
+</html>

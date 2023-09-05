@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEX BOX</title>
+    <style>
+        .container {
+            height: 900px;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: row;
+
+            flex-wrap: wrap;
+            /* 주축정렬 */
+            /* justify-content: center; */
+
+            /* 교차축 정렬 */
+            /* align-content: center; */
+
+            /* 교차축 정렬 */
+            /* align-items: center; */
+
+        }
+
+        .post {
+            background-color: gray;
+            border: 2px solid black;
+            margin: 0.5rem;
+            padding: 0.5rem;
+        }
+        .item1 {
+            /* 부모가 아니라 자기 자신 정렬 */
+            align-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="post item1">
+            <h2>Post Title 1</h2>
+        </div>
+
+
+        <div class="post item2">
+            <h2>Post Title 2</h2>
+        </div>
+
+
+        <div class="post item3">
+            <h2>Post Title 3</h2>
+        </div>
+
+
+        <div class="post item4">
+            <h2>Post Title 4</h2>
+
+        </div>
+
+    </div>
+    
+</body>
+
+</html>
