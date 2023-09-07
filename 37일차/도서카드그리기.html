@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <style>
+        .box {
+            width: 400px;
+            height: 600px;
+            border: 1px solid rgb(161, 151, 151);
+            border-radius: 5px;
+
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    width < 768px : 각 카드가 12칸 차지
+    768px <= width < 992px : 각 카드가 6칸 차지
+    992px <= width : 각 카드가 4칸 차지
+    -->
+    <div>
+        <div class="container">
+            <p style="font-size: 50px; text-align: center;">도서 구매 서비스</p>
+            <!-- <div class="flex-container"> -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card">
+                        <img src="book1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 style="font-size: large; text-align: center;" class="card-title">책 제목1</h5>
+                            <p style="font-size: small; text-align: center;" class="card-text">책 내용 1</p>
+                            <div style="text-align: center;"><a style="display: inline-block;" href="#"
+                                    class="btn btn-primary">구매</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="book1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 style="font-size: large; text-align: center;" class="card-title">책 제목2</h5>
+                            <p style="font-size: small; text-align: center;" class="card-text">책 내용 2</p>
+                            <div style="text-align: center;"><a style="display: inline-block;" href="#"
+                                    class="btn btn-primary">구매</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <div class="card">
+                            <img src="book1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 style="font-size: large; text-align: center;" class="card-title">책 제목3</h5>
+                                <p style="font-size: small; text-align: center;" class="card-text">책 내용 3</p>
+                                <p style="font-size: 3px; text-align: center;" class="card-text">Lorem ipsum dolor sit
+                                    amet
+                                    consectetur, adipisicing elit. Labore, aliquam soluta! Nobis quod sint, corrupti
+                                    fuga
+                                    quae non error aliquam ratione repudiandae earum repellat architecto laborum quis!
+                                    Tenetur, suscipit iure?</p>
+                                <div style="text-align: center;"><a style="display: inline-block;" href="#"
+                                        class="btn btn-primary">구매</a></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div>
+
+                    <div class="card">
+                        <img src="book1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 style="font-size: large; text-align: center;" class="card-title">책 제목4</h5>
+                            <p style="font-size: small; text-align: center;" class="card-text">책 내용 4</p>
+                            <div style="text-align: center;"><a style="display: inline-block;" href="#"
+                                    class="btn btn-primary">구매</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
