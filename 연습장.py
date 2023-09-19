@@ -1,125 +1,56 @@
-"""
-1
-2
-0 0 1 0 0 1 0 0
-1 0 0 1 1 1 0 1
-0 0 1 0 1 1 0 0
-0 0 1 0 1 1 0 1
-1 1
-3 -1
-"""
-# 오늘을 기억할것
+def merge(left, right):
+    result = []  
+    cnt_l = 0
+    cnt_r = 0
+    while cnt_l < len(left) or cnt_r < len(right):
 
-def right():
-    for i in range(0, 8):
-        if i == 7:
-            C[n][0] = arr[n][7]
-        else:
-            if arr[n][i] == 1:
-                C[n][i+1] = 1
-    
-
-def left():
-    for i in range(0, 8):
-        if i == 0:
-            C[n][7] = arr[n][0]
-        else:
-            if arr[n][i] == 1:
-                C[n][i-1] = 1
-    
-
-def solve(n, direction):
-    if is_valid(n):
-        if n == 3 and arr[n-1][2] != arr[n][6]:
-            if direction == 1:
-                right()
+        if cnt_l < len(left) and cnt_r < len(right):
+           
+            if left[cnt_l] <= right[cnt_r]:
+                result.append(left[cnt_l])
+                cnt_l = cnt_l + 1
             else:
-                left()
-
-        if arr[n][2] != arr[n+1][6] and visited[n] == 0:
-            if direction == 1:
-                visited[n] = 1
-                right() 
-                solve(n+1, -1)
-                    
+                result.append(right[cnt_r])
+                cnt_r = cnt_r + 1
         
-            else:
-                visited[n] = 1
-                left()
-                solve(n+1, -1)
-        else:
-            visited[n] = 1
-            
-        
-    if is_valid2(n):
-        if n == 0 and arr[n][2] != arr[n+1][6]:
-        
-            if direction == 1:
-                right()
-            else:
-                left()
-        
+        elif cnt_l < len(left):
+            result.append(left[cnt_l])
+            cnt_l = cnt_l + 1
 
-        if arr[n][6] != arr[n-1][2] and visited[n] == 0:
-            if direction == 1:
-                visited[n] = 1
-                solve(n-1, -1)
-                right()
-            else:
-                visited[n] = 1
-                solve(n-1, 1)
-                left()
-        else:
-            visited[n] = 1
-            
+        elif cnt_r < len(right):
+            result.append(right[cnt_r])
+            cnt_r = cnt_r + 1
 
-    return C
+    return result
 
 
 
-def is_valid(n):
-    return 0 <= n+1 < 4
+def mergeSort(lst):
+    global cnt
+    m = len(lst)
 
-def is_valid2(n):
-    return 0 <= n-1 < 4
+    if m == 1:
+        return lst
+
+    mid = m // 2
+    left, right = lst[:mid], lst[mid:]
+    if mid % 2 == 0:
+        if left[mid-1] > right[mid-1]:
+            cnt = cnt + 1
+    else:
+        if left[mid-1] > right[mid]:
+            cnt = cnt + 1
+    left = mergeSort(left)  
+    right = mergeSort(right)  
+
+    return merge(left, right)
 
 
 T = int(input())
 
 for tc in range(1, T + 1):
-    K = int(input())
-    arr = [list(map(int, input().split())) for _ in range(0, 4)]
-    C = [[0] * 8 for _ in range(0, 4)]
-
-    for _ in range(0, K):
-        N, direction = map(int, input().split())
-        n = N - 1 # 톱니바퀴 인덱스번호
-        visited = [0] * 4
-        A = solve(n, direction)
-    
-    for r in range(0, 4):
-        cnt = 0
-        for c in range(0, 8):
-            if C[r][c] == 0:
-                cnt = cnt + 1   
-            if cnt == 8:
-                C[r] = arr[r] 
-        print(cnt)
-    
-    print(C)
-        
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
+    N = int(input())
+    num = list(map(int, input().split()))
+    cnt = 0
+    print(mergeSort(num)[len(num) // 2])
+    print(cnt)
