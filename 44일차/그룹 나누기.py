@@ -1,8 +1,14 @@
+"""
+1
+5 2
+1 2 3 4
+"""
+
 def find_set(x):
     if p[x] == x:
         return x
     
-    p[x] = find_set(p[x])
+    text[x] = find_set(p[x])
     return p[x]
 
 def union(x, y):
@@ -29,11 +35,7 @@ for tc in range(1, T + 1):
     p = [i for i in range(0, N+1)]
     
     for i in range(0, M):
-        if len(text) == 2:
-            cnt = 1
-            break
         union(text[2*i], text[2*i+1])
-    
 
     print(f"#{tc} {cnt}")
     
