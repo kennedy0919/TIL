@@ -1,15 +1,3 @@
-'''
-1
-4 7
-0 1 9
-0 2 3
-0 3 7
-1 4 2
-2 3 100
-2 4 100
-3 4 8
-'''
-
 from heapq import heappop, heappush
 
 INF = 100000000
