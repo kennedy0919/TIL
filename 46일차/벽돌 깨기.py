@@ -16,18 +16,8 @@
 1 1 1 1 1 1 1 1 1 5
 1 1 7 1 1 1 1 1 1 1
 """
-from itertools import product
-
-def pick(n):
-    if n == N:
-        return
-    
-    for c in range(0, W):
-
-        pick(n+1)
 
 def boom(r, c, value):
-    global ans
     # dr = [-1, 1, 0, 0]
     # dc = [0, 0, -1, 1]
     if block[r][c] == 1:
@@ -51,31 +41,23 @@ def boom(r, c, value):
                     v1 = block[nr][nc]
                     block[nr][nc] = 0
                     boom(nr, nc, v1)
-    cnt = 0        
-    for r in range(0, H):
-        for c in range(0, W):
-            if block[r][c] != 0:
-                cnt = cnt + 1
-    if ans > cnt:
-        ans = cnt
-    return ans
+                    
+    # block_down()
+    return
 
 
 def block_down():
     for c in range(0, W):
         lst = []
-        lst2 = []
-        real_lst = [0] * H
+        A = []
         for r in range(0, H):
             lst.append(block[r][c])
-        while 0 in lst:
-            lst.remove(0)
-        # print("lst2", lst2)
-        for i in range(0, len(lst)):
-            real_lst[H-1-i] = lst[len(lst)-1-i]
+        A = sorted(lst)
+        # print("A", A)
+        # print("+++++++++++++++++++++++")
+        # print("lst", lst)
         for r in range(0, H):
-            block[r][c] = real_lst[r]
-
+            block[r][c] = A[r]
 
 
 T = int(input())
@@ -83,23 +65,12 @@ T = int(input())
 for tc in range(1, T + 1):
     N, W, H = map(int, input().split())
     block = [list(map(int, input().split())) for _ in range(0, H)]
-    ans = 1000
-    # boom(1, 2, 1)
-    # for i in range(0, H):
-    #     print(block[i])
-    # print("===================")
-    # boom(2, 2, 3)
-    # block_down()
-    # for i in range(0, H):
-    #     print(block[i])
-
-
+    
     boom(1, 2, 1)
-    block_down()
+    for i in range(0, H):
+        print(block[i])
+    print("===================")
     boom(2, 2, 3)
     block_down()
-    boom(8, 6, 2)
-    block_down()
-    print(ans)
-
-    
+    for i in range(0, H):
+        print(block[i])
