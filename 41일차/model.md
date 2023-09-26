@@ -16,3 +16,8 @@
 # Admin site
 #### 관리자 계정 만들기
 - commend : python manage.py createsuperuser
+
+#### models.py
+- models.py 에 변화가 생기면 반드시 다음 커맨드를 입력!!!
+- python manage.py makemigrations
+- python manage.py migrate
