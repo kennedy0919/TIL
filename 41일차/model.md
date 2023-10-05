@@ -54,7 +54,7 @@
 #### 글 작성하고 싶을때
 1. app url 에 추가해주기
 2. views.py 에 함수 추가해주기
-3. tamplates에 html 추가해주기(crate으로 많이쓰는듯)
+3. tamplates에 html 추가해주기(create으로 많이쓰는듯)
 4. 추가한 곳에 내용 작성해주기
 5. index에 articles:create url 추가해주기
 
