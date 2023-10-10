@@ -1,105 +1,23 @@
-# 벽돌 깬 위치 4방향 탐색
-# 벽돌로 깬 뒤
-# 0 이나 1 이아닌 다른 수를 만나면 그위치에서 다시 깸
-
-"""
-1
-3 10 10
-0 0 0 0 0 0 0 0 0 0
-1 0 1 0 1 0 0 0 0 0
-1 0 3 0 1 1 0 0 0 1
-1 1 1 0 1 2 0 0 0 9
-1 1 4 0 1 1 0 0 1 1
-1 1 4 1 1 1 2 1 1 1
-1 1 5 1 1 1 1 2 1 1
-1 1 6 1 1 1 1 1 2 1
-1 1 1 1 1 1 1 1 1 5
-1 1 7 1 1 1 1 1 1 1
-"""
-from itertools import product
-
-def pick(n):
-    if n == N:
-        return
-    
-    for c in range(0, W):
-
-        pick(n+1)
-
-def boom(r, c, value):
+def solve(n, now_sum, c):
     global ans
-    # dr = [-1, 1, 0, 0]
-    # dc = [0, 0, -1, 1]
-    if block[r][c] == 1:
-        block[r][c] = 0
+    if n == N:
+        ans = min(ans, now_sum+arr[c][1])
         return
 
-    for i in range(1, value):
-        dr = [-i, i, 0, 0]
-        dc = [0, 0, -i, i]
-        for d in range(0, 4):
-            nr = r + dr[d] 
-            nc = c + dc[d]
-            if 0 <= nr < H and 0 <= nc < W:
-                if block[nr][nc] == 0:
-                    continue
-
-                elif block[nr][nc] == 1:
-                    block[nr][nc] = 0
-
-                else:
-                    v1 = block[nr][nc]
-                    block[nr][nc] = 0
-                    boom(nr, nc, v1)
-    cnt = 0        
-    for r in range(0, H):
-        for c in range(0, W):
-            if block[r][c] != 0:
-                cnt = cnt + 1
-    if ans > cnt:
-        ans = cnt
-    return ans
-
-
-def block_down():
-    for c in range(0, W):
-        lst = []
-        lst2 = []
-        real_lst = [0] * H
-        for r in range(0, H):
-            lst.append(block[r][c])
-        while 0 in lst:
-            lst.remove(0)
-        # print("lst2", lst2)
-        for i in range(0, len(lst)):
-            real_lst[H-1-i] = lst[len(lst)-1-i]
-        for r in range(0, H):
-            block[r][c] = real_lst[r]
+    for j in range(2, N+1):
+        if visited[j] == 0:
+            visited[j] = 1
+            solve(n+1, now_sum + arr[c][j], j)
+            visited[j] = 0
 
 
 
 T = int(input())
 
 for tc in range(1, T + 1):
-    N, W, H = map(int, input().split())
-    block = [list(map(int, input().split())) for _ in range(0, H)]
-    ans = 1000
-    # boom(1, 2, 1)
-    # for i in range(0, H):
-    #     print(block[i])
-    # print("===================")
-    # boom(2, 2, 3)
-    # block_down()
-    # for i in range(0, H):
-    #     print(block[i])
-
-
-    boom(1, 2, 1)
-    block_down()
-    boom(2, 2, 3)
-    block_down()
-    boom(8, 6, 2)
-    block_down()
-    print(ans)
-
-    
+    N = int(input())
+    arr = [[0] * (N+1)] + [[0] + list(map(int, input().split())) for _ in range(0, N)]
+    ans = 10000
+    visited = [0] * (N+1)
+    solve(1, 0, 1)
+    print(f"#{tc} {ans}")
